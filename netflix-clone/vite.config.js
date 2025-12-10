@@ -4,5 +4,6 @@ import react from '@vitejs/plugin-react'
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [react()],
-  base: "/netflix-practice-ui-Clone-2025eden/",
+  base: "./",
 });
+// /netflix-practice-ui-Clone-2025eden/;

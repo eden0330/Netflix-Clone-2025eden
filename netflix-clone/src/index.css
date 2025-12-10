@@ -1,4 +1,4 @@
-/* src/index.css */
+
 
 * {
   box-sizing: border-box;
@@ -28,5 +28,4 @@ body {
   padding-top: 90vh; /* space for sticky header */
   padding-inline: 4vw;
 }
-  /* padding-inline: 4vw;
-} 
+ 

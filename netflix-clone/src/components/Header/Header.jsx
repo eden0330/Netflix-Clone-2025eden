@@ -1,27 +1,23 @@
 import React, { useEffect, useState } from "react";
 
 import styles from "./Header.module.css";
-import netflix from "../../assets/Images/netflix.png"
-import SearchIcon from '@mui/icons-material/Search';
+import netflix from "../../assets/Images/netflix.jpeg";
+import SearchIcon from "@mui/icons-material/Search";
 import NotificationsNoneIcon from "@mui/icons-material/NotificationsNone";
 import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
- import MenuIcon from "@mui/icons-material/Menu";
+import MenuIcon from "@mui/icons-material/Menu";
 import CloseIcon from "@mui/icons-material/Close";
-import profiles from "../../assets/Images/profile.png"
-
-
+import profiles from "../../assets/Images/pro.png";
 
 const Header = () => {
-
-const [isScrolled, setIsScrolled] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
-  
+
   const [profileOpen, setProfileOpen] = useState(false);
 
- // change background when scroll
+  // change background when scroll
 
-
-useEffect(() => {
+  useEffect(() => {
     const handleScroll = () => {
       if (window.scrollY > 50) {
         setIsScrolled(true); //add dark gb
@@ -42,7 +38,7 @@ useEffect(() => {
     setProfileOpen((prev) => !prev);
   };
 
- const closeMobileMenu = () => {
+  const closeMobileMenu = () => {
     setMobileOpen(false);
   };
 
@@ -55,7 +51,12 @@ useEffect(() => {
       >
         <div className={styles.head_container}>
           <div className={styles.header_left}>
-            <img src={netflix} alt="Netflix Logo" width="100" />
+            <img
+              src={netflix}
+              alt="Netflix Logo"
+              width="100"
+              className={styles.logo}
+            />
 
             {/* desktop menu */}
 
@@ -86,10 +87,6 @@ useEffect(() => {
               </ul>
             )}
           </div>
-          {/* Mobile logo  */}
-          {/* <div className={styles.logo_mobile}>
-            <img src={netflix} alt="Netflix Logo" width="90" />
-          </div> */}
         </div>
 
         {/* Right */}
@@ -120,7 +117,6 @@ useEffect(() => {
                   aria-label="edadani1514 – Account &amp; Settings"
                   onClick={(e) => {
                     e.preventDefault(); // ⬅ stop navigation
-            
                   }}
                 >
                   <span className="profile-link" role="presentation">
@@ -150,39 +146,10 @@ useEffect(() => {
               </div>
             )}
           </div>
-          {/* Mobile menu button */}
-          {/* <button
-            className={styles.menu_button}
-            onClick={toggleMobileMenu}
-            aria-label="Toggle navigation"
-          >
-            {mobileOpen ? (
-              <CloseIcon className={styles.icon} />
-            ) : (
-              <MenuIcon className={styles.icon} />
-            )}
-          </button> */}
         </div>
       </div>
-      {/* Mobile menu */}
-
-      {/* {mobileOpen && (
-        <nav className={styles.nav_mobile} onClick={closeMobileMenu}>
-          <span>Browse</span> <ArrowDropDownIcon />
-          <ul className={styles.nav_list_mobile}>
-            <li>Home</li>
-            <li>Series</li>
-            <li>Films</li>
-            <li>Games</li>
-            <li>Latest</li>
-            <li>My List</li>
-            <li>Browse by Language</li>
-          </ul>
-        </nav>
-      )} */}
     </>
   );
-}
-
+};
 
 export default Header;

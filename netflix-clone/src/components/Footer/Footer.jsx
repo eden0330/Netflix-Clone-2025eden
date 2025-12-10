@@ -45,6 +45,10 @@ const Footer = () => {
           </div>
         </div>
         <div className="copy_write">&Copy1997-2025 Netflix,Inc</div>
+        <div>
+          This is a student project for learning React. Not affiliated with
+          Netflix. No real accounts or payments.
+        </div>
       </div>
     </div>
   );
